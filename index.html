@@ -41,12 +41,12 @@
         }
         
         .silex-id-1474394621033-3 {
-            top: 5px;
-            left: 0px;
+            top: 140px;
+            left: 5px;
         }
         
         .silex-id-1474394621032-2 {
-            min-height: 600px;
+            min-height: 590px;
             background-color: transparent;
             width: 1200px;
         }
@@ -54,9 +54,16 @@
         .silex-id-1503773370110-1 {
             width: 1200px;
             background-color: rgb(255, 255, 255);
-            min-height: 599px;
-            top: 0px;
+            min-height: 392px;
+            top: 207px;
             left: 0px;
+        }
+        
+        .silex-id-1503777815618-5 {
+            width: 1199px;
+            min-height: 154px;
+            top: 21px;
+            left: 1px;
         }
         
         .silex-id-1478366450713-3 {
@@ -80,7 +87,7 @@
     </style>
     <title></title>
     <script type="text/javascript" class="silex-json-styles">
-        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366444112-1":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1503773113943-0":{"width":"1199px","min-height":"101px","top":"-1px","left":"1px"},"silex-id-1503773370110-1":{"width":"1200px","background-color":"rgb(255, 255, 255)","min-height":"599px","top":"0px","left":"0px"},"silex-id-1503774248997-3":{"width":"","background-color":"","min-height":"100px"}},"mobile":{},"componentData":{}}]
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"140px","left":"5px"},"silex-id-1474394621032-2":{"min-height":"590px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366444112-1":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1503773113943-0":{"width":"1199px","min-height":"101px","top":"-1px","left":"1px"},"silex-id-1503773370110-1":{"width":"1200px","background-color":"rgb(255, 255, 255)","min-height":"392px","top":"207px","left":"0px"},"silex-id-1503774248997-3":{"width":"","background-color":"","min-height":"100px"},"silex-id-1503777815618-5":{"width":"1199px","min-height":"154px","top":"21px","left":"1px"}},"mobile":{},"componentData":{}}]
     </script>
 
 
@@ -148,17 +155,32 @@
                 <div class="silex-element-content">
                     <center>
                         <form action="" method="">
-                            <button type="button" style="
-        width:250px;
-        height:35px;
-        background-color:rgb(0,204,0);
-        border-style:solid;border-left-color:rgb(0,204,0);
-        border-top-color:rgb(0,204,0);
-        border-right-color:rgb(0,204,0);
-        border-bottom-color:rgb(0,204,0);
-        color:rgb(255,255,255)">Generate</button>
+                            <button class="centerc" type="button" style="
+    width:350px;
+    height:45px;
+    background-color:rgb(0,204,0);
+    border-style:solid;border-left-color:rgb(0,204,0);
+    border-top-color:rgb(0,204,0);
+    border-right-color:rgb(0,204,0);
+    border-bottom-color:rgb(0,204,0);
+    color:rgb(255,255,255)" onclick="generatePassword()">Generate</button>
+
+                            <h1 id="password"></h1>
                         </form>
                     </center>
+
+                    <script type="text/javascript">
+                        const String chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#¤%&/()=?@£$€{[]}";
+                        function generatePassword() { 
+                            alert('hej');
+                        }
+                    </script>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style silex-id-1503777815618-5 text-element" data-silex-id="silex-id-1503777815618-5" style="">
+                <div class="silex-element-content normal">
+                    <h1 style="text-align: center;" class="heading1">
+                        <font color="#ff9900"><b>Secure</b></font> passwords that you can <b style="background-color: rgb(255, 255, 255);"><font color="#ff9900">remember</font></b></h1>
                 </div>
             </div>
         </div>
