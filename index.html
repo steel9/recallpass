@@ -29,15 +29,15 @@
 		var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
 			words = request.responseText.split('\n');
+			
+			pass += words[Math.floor(Math.random() * words.length)];
+        
+		
+			document.getElementById('password').innerHTML = pass;
+			document.getElementById('passwordtitle').innerHTML = 'Password:';
 		};
 		request.open("GET","https://steel9.github.io/recallpass/files/d.dic", false);
 		request.send();
-		
-		pass += words[Math.floor(Math.random() * words.length)];
-        
-		
-        document.getElementById('password').innerHTML = pass;
-		document.getElementById('passwordtitle').innerHTML = 'Password:';
     }
 </script>
 <form action="" method="">
