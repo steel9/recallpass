@@ -4,6 +4,7 @@
 <center>
 <h1><span style="color: rgb(0, 0, 0); font-size: 200%">recall</span><span style="color: rgb(0, 153, 255); font-size: 200%">pass.today</span></h1>
 <h2><span style="color: rgb(235, 134, 20)">Secure </span>passwords that you can <span style="color: rgb(235, 134, 20)">remember</span></h2>
+<h2>NOTE! This is an UNFINISHED experiment! Do not use the passwords at the moment</h2>
 <br>
 <br>
 <br>
@@ -28,16 +29,19 @@
 		var words;
 		var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
-			words = request.responseText.split('\n');
-			
-			for (i = 0; i < 5; i++)
+			if (request.responseText.length > 0)
 			{
-				pass += words[Math.floor(Math.random() * words.length)];
-				pass += ",";
+				words = request.responseText.split('\n');
+				
+				for (i = 0; i < 3; i++)
+				{
+					pass += words[Math.floor(Math.random() * words.length)];
+					pass += ",";
+				}
+				
+				document.getElementById('password').innerHTML = pass;
+				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
-			
-			document.getElementById('password').innerHTML = pass;
-			document.getElementById('passwordtitle').innerHTML = 'Password:';
 		};
 		request.open("GET","https://steel9.github.io/recallpass/files/d.dic", false);
 		request.send();
