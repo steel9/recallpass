@@ -21,7 +21,7 @@
 	};
 
     function generatePassword() {
-		document.getElementById('password').innerHTML = 'Please wait...';
+		document.getElementById('passwordtitle').innerHTML = 'Please wait...';
 		var pass = "";
 		var sep = separators[Math.floor(Math.random() * separators.length)];
 		var words;
@@ -55,7 +55,7 @@
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
 		};
-		request.open("GET","files/A_fileslist.txt", false);
+		request.open("GET","files/A_fileslist.txt", true);
 		request.send();
     }
 </script>
