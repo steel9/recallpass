@@ -39,6 +39,7 @@
 				
 				document.getElementById('password').innerHTML = pass;
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
+				document.getElementById('facts').innerHTML = 'Words in wordlist: ' + words.length;
 			}
 		};
 		request.open("GET","files/words.txt", true);
@@ -62,6 +63,10 @@
 	<h2 id="passwordtitle"></h2>
     <p id="password" style="font-size: 150%"></p>
 </form>
+<br>
+<br>
+<br>
+<p id="facts"></p>
 </center>
 </body>
 </html>
