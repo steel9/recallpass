@@ -32,22 +32,23 @@
 				var allwords = "";
 				var wordFiles = request.responseText.split('\n');
 				int i = 0;
-				while (i < wordFiles.length) {
-					function index() {
-						var request2 = new XMLHttpRequest();
-						request2.onreadystatechange = function(){
-							if (request.readyState === XMLHttpRequest.DONE)
-							{
-								allwords += request2.responseText;
-							}
-						};
-						request2.open("GET","files/" + wordFiles[i], false);
-						request2.send();
-						i++;
+				function index() {
+					var request2 = new XMLHttpRequest();
+					request2.onreadystatechange = function(){
+						if (request.readyState === XMLHttpRequest.DONE)
+						{
+							allwords += request2.responseText;
+						}
+					};
+					request2.open("GET","files/" + wordFiles[i], false);
+					request2.send();
+					i++;
+					if (i < wordFiles.length)
+					{
 						setTimeout(index, 5);
 					}
-					index();
 				}
+				index();
 				
 				words = allwords.split('\n');
 				
