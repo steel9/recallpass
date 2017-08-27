@@ -32,11 +32,14 @@
 				var wordFiles = request.responseText.split('\n');
 				for (i = 0; i < wordFiles.length; i++) {
 					var request2 = new XMLHttpRequest();
-					request.onreadystatechange = function(){
-						allwords += request.responseText;
+					request2.onreadystatechange = function(){
+						if (request2.responseText.length > 0)
+						{
+							allwords += request2.responseText;
+						}
 					};
-					request.open("GET","files/" + wordFiles[i], false);
-					request.send();
+					request2.open("GET","files/" + wordFiles[i], false);
+					request2.send();
 				}
 				
 				words = allwords.split('\n');
