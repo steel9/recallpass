@@ -56,6 +56,24 @@
 					request.open("GET","disclaimer.txt", true);
 					request.send();
 				}
+				
+				function openGitHub() {
+					var win = window.open('https://github.com/steel9/recallpass', '_blank');
+					if (win) {
+						win.focus();
+					} else {
+						alert('Please allow popups for this website');
+					}
+				}
+				
+				function showLicenses() {
+					var win = window.open('https://github.com/steel9/recallpass/tree/master/licenses', '_blank');
+					if (win) {
+						win.focus();
+					} else {
+						alert('Please allow popups for this website');
+					}
+				}
 			</script>
 			<form action="" method="">
 				<h2 id="passwordtitle"></h2>
@@ -89,6 +107,8 @@
 		<br>
 		<br>
 		<br>
-		<input type="button" value="Disclaimer" onclick="showDisclaimer()"/>
+		<input type="button" value="Disclaimer" onclick="showDisclaimer()">
+		<input type="button" value="Licenses" onclick="showLicenses()">
+		<input type="button" value="GitHub" onclick="openGitHub()">
 	</footer>
 </html>
