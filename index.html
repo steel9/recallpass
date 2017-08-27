@@ -39,7 +39,7 @@
 				
 				document.getElementById('password').innerHTML = pass;
 				document.getElementById('passwordtitle').innerHTML = "Here's a fresh generated password:";
-				document.getElementById('facts').innerHTML = 'Words in wordlist: ' + words.length;
+				document.getElementById('facts').innerHTML = words.length;
 			}
 		};
 		request.open("GET","files/words.txt", true);
@@ -66,7 +66,7 @@
 <br>
 <br>
 <br>
-<p id="facts"></p>
+<p>Words in <A HREF="http://wordlist.aspell.net/">wordlist</A>: <p id="facts"></p><p>
 </center>
 </body>
 </html>
