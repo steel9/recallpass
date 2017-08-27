@@ -50,9 +50,10 @@
 						if (request.readyState === XMLHttpRequest.DONE)
 						{
 							alert(request.responseText);
+							return;
 						}
 					};
-					request.open("GET","disclaimer.txt", false);
+					request.open("GET","disclaimer.txt", true);
 					request.send();
 				}
 			</script>
