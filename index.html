@@ -36,14 +36,14 @@
 				for (i = 0; i < 3; i++)
 				{
 					pass += words[Math.floor(Math.random() * words.length)];
-					pass += ",";
+					pass += sep + symbols[Math.floor(Math.random() * symbols.length)];
 				}
 				
 				document.getElementById('password').innerHTML = pass;
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
 		};
-		request.open("GET","https://steel9.github.io/recallpass/files/d.dic", false);
+		request.open("GET","files/d.dic", false);
 		request.send();
     }
 </script>
