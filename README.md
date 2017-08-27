@@ -1,2 +1,2 @@
-# recallpass
-This is just an unfinished experiment
+# Recallpass BETA
+A password generator that generates secure memorable passwords (hopefully)
