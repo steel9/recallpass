@@ -31,17 +31,21 @@
 			{
 				var allwords = "";
 				var wordFiles = request.responseText.split('\n');
-				for (i = 0; i < wordFiles.length; i++) {
-					var request2 = new XMLHttpRequest();
-					request2.onreadystatechange = function(){
-						if (request2.responseText.length > 0)
-						{
-							allwords += request2.responseText;
-						}
-					};
-					request2.open("GET","files/" + wordFiles[i], false);
-					request2.send();
+				function index() {
+					for (i = 0; i < wordFiles.length; i++) {
+						var request2 = new XMLHttpRequest();
+						request2.onreadystatechange = function(){
+							if (request2.responseText.length > 0)
+							{
+								allwords += request2.responseText;
+							}
+						};
+						request2.open("GET","files/" + wordFiles[i], false);
+						request2.send();
+					}
+					setTimeout(index, 5);
 				}
+				index();
 				
 				words = allwords.split('\n');
 				
