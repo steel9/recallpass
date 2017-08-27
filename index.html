@@ -30,9 +30,12 @@
         request.onreadystatechange = function(){
 			words = request.responseText.split('\n');
 			
-			pass += words[Math.floor(Math.random() * words.length)];
-        
-		
+			for (i = 0; i < 5; i++)
+			{
+				pass += words[Math.floor(Math.random() * words.length)];
+				pass += ",";
+			}
+			
 			document.getElementById('password').innerHTML = pass;
 			document.getElementById('passwordtitle').innerHTML = 'Password:';
 		};
