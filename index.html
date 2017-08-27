@@ -39,7 +39,7 @@
 							allwords += request2.responseText;
 						}
 					};
-					request2.open("GET","files/" + wordFiles[i], true);
+					request2.open("GET","files/" + wordFiles[i], false);
 					request2.send();
 				}
 				
@@ -55,7 +55,7 @@
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
 		};
-		request.open("GET","files/A_fileslist.txt", true);
+		request.open("GET","files/A_fileslist.txt", false);
 		request.send();
     }
 </script>
