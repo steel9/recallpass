@@ -28,12 +28,11 @@
 
 		var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
-			alert(request.responseText);
+			pass += request.responseText;
 		};
 		request.open("GET","https://steel9.github.io/recallpass/files/d.dic", false);
 		request.send();
 		
-		pass += request.responseText;
 		//var words = request.responseText.split('\n');
 		//pass += words[Math.floor(Math.random() * words.length)];
         
