@@ -25,16 +25,15 @@
     function generatePassword() {
 		var pass = "";
 		var sep = separators[Math.floor(Math.random() * separators.length)];
-
+		var words;
 		var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
-			pass += request.responseText;
+			words = request.responseText.split('\n');
 		};
 		request.open("GET","https://steel9.github.io/recallpass/files/d.dic", false);
 		request.send();
 		
-		//var words = request.responseText.split('\n');
-		//pass += words[Math.floor(Math.random() * words.length)];
+		pass += words[Math.floor(Math.random() * words.length)];
         
 		
         document.getElementById('password').innerHTML = pass;
