@@ -27,7 +27,7 @@
 		var words;
 		var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
-			if (request.responseText.length > 0)
+			if (request.readyState === XMLHttpRequest.DONE)
 			{
 				var allwords = "";
 				var wordFiles = request.responseText.split('\n');
@@ -35,7 +35,7 @@
 					for (i = 0; i < wordFiles.length; i++) {
 						var request2 = new XMLHttpRequest();
 						request2.onreadystatechange = function(){
-							if (request2.responseText.length > 0)
+							if (request.readyState === XMLHttpRequest.DONE)
 							{
 								allwords += request2.responseText;
 							}
