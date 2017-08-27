@@ -28,7 +28,18 @@
         request.onreadystatechange = function(){
 			if (request.responseText.length > 0)
 			{
-				words = request.responseText.split('\n');
+				var allwords = "";
+				var wordFiles = request.responseText.split('\n');
+				for (i = 0; i < wordFiles.length; i++) {
+					var request2 = new XMLHttpRequest();
+					request.onreadystatechange = function(){
+						allwords += request.responseText;
+					};
+					request.open("GET","files/" + wordFiles[i], false);
+					request.send();
+				}
+				
+				words = allwords.split('\n');
 				
 				for (i = 0; i < 3; i++)
 				{
@@ -40,7 +51,7 @@
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
 		};
-		request.open("GET","files/d.dic", false);
+		request.open("GET","files/A_fileslist.txt", false);
 		request.send();
     }
 </script>
