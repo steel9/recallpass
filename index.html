@@ -1,79 +1,85 @@
 <!doctype html>
 <html>
-<body onload="generatePassword()">
-<center>
-<h1><span style="color: rgb(0, 0, 0); font-size: 200%; font-family: Segoe UI">recall</span><span style="color: rgb(0, 153, 255); font-size: 200%">pass.today</span> BETA</h1>
-<h2><span style="color: rgb(235, 134, 20)">Secure </span>passwords that you can <span style="color: rgb(235, 134, 20)">remember</span></h2>
-<h2>NOTE! This is an UNFINISHED experiment! Do not use the passwords at the moment</h2>
-<br>
-<br>
-<script type="text/javascript">
-	<!--Symbols are modified to produce an easier to remember password-->
-    const symbols="!#%&=@£$€";
-	const separators="._-,;";
-	
-	String.prototype.insert = function (index, string) {
-		if (index > 0)
-			return this.substring(0, index) + string + this.substring(index, this.length);
-		else
-			return string + this;
-	};
-
-    function generatePassword() {
-		document.getElementById('passwordtitle').innerHTML = 'Please wait...';
-		var pass = "";
-		var sep = separators[Math.floor(Math.random() * separators.length)];
-		var words;
-		var request = new XMLHttpRequest();
-        request.onreadystatechange = function(){
-			if (request.readyState === XMLHttpRequest.DONE)
-			{
-				words = request.responseText.split('\n');
+	<body onload="generatePassword()" style="min-height: 100%">
+		<center>
+			<h1><span style="color: rgb(0, 0, 0); font-size: 200%; font-family: Segoe UI">recall</span><span style="color: rgb(0, 153, 255); font-size: 200%">pass.today</span> BETA</h1>
+			<h2><span style="color: rgb(235, 134, 20)">Secure </span>passwords that you can <span style="color: rgb(235, 134, 20)">remember</span></h2>
+			<br>
+			<br>
+			<script type="text/javascript">
+				<!--Symbols are modified to produce an easier to remember password-->
+				const symbols="!#%&=@£$€";
+				const separators="._-,;";
 				
-				for (i = 0; i < 3; i++)
-				{
-					pass += words[Math.floor(Math.random() * words.length)];
-					pass += sep + symbols[Math.floor(Math.random() * symbols.length)];
+				String.prototype.insert = function (index, string) {
+					if (index > 0)
+						return this.substring(0, index) + string + this.substring(index, this.length);
+					else
+						return string + this;
+				};
+
+				function generatePassword() {
+					document.getElementById('passwordtitle').innerHTML = 'Please wait...';
+					var pass = "";
+					var sep = separators[Math.floor(Math.random() * separators.length)];
+					var words;
+					var request = new XMLHttpRequest();
+					request.onreadystatechange = function(){
+						if (request.readyState === XMLHttpRequest.DONE)
+						{
+							words = request.responseText.split('\n');
+							
+							for (i = 0; i < 3; i++)
+							{
+								pass += words[Math.floor(Math.random() * words.length)];
+								pass += sep + symbols[Math.floor(Math.random() * symbols.length)];
+							}
+							
+							document.getElementById('password').innerHTML = pass;
+							document.getElementById('passwordtitle').innerHTML = "Here's a fresh generated password:";
+							document.getElementById('facts').innerHTML = words.length;
+						}
+					};
+					request.open("GET","files/words.txt", true);
+					request.send();
 				}
 				
-				document.getElementById('password').innerHTML = pass;
-				document.getElementById('passwordtitle').innerHTML = "Here's a fresh generated password:";
-				document.getElementById('facts').innerHTML = words.length;
-			}
-		};
-		request.open("GET","files/words.txt", true);
-		request.send();
-    }
-</script>
-<form action="" method="">
-    <input type="button" value="Generate new" style="
-    width:450px;
-    height:55px;
-    background-color:rgb(0,204,0);
-    border-style:solid;border-left-color:rgb(0,204,0);
-    border-top-color:rgb(0,204,0);
-    border-right-color:rgb(0,204,0);
-    border-bottom-color:rgb(0,204,0);
-    color:rgb(255,255,255)" onclick="generatePassword()"/>
-    <br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<h2 id="passwordtitle"></h2>
-    <p id="password" style="font-size: 250%"></p>
-</form>
-<br>
-<br>
-<br>
-<p>Words in <A HREF="http://wordlist.aspell.net/">wordlist</A>: <p id="facts"></p><p>
-</center>
-</body>
-<center>
-<footer>
-     <img src="files/logo.png"></img>
-</footer>
-</center>
+				function showDisclaimer() {
+					var request = new XMLHttpRequest();
+					request.onreadystatechange = function(){
+						if (request.readyState === XMLHttpRequest.DONE)
+						{
+							alert(request.responseText);
+						}
+					};
+					request.open("GET","/disclaimer.txt", true);
+					request.send();
+				}
+			</script>
+			<form action="" method="">
+				<h2 id="passwordtitle"></h2>
+				<p id="password" style="font-size: 250%"></p>
+				<br>
+				<input type="button" value="Generate new" style="
+				width:450px;
+				height:55px;
+				background-color:rgb(0,204,0);
+				border-style:solid;border-left-color:rgb(0,204,0);
+				border-top-color:rgb(0,204,0);
+				border-right-color:rgb(0,204,0);
+				border-bottom-color:rgb(0,204,0);
+				color:rgb(255,255,255)" onclick="generatePassword()"/>
+			</form>
+			<br>
+			<br>
+			<br>
+			<p>Words in <A HREF="http://wordlist.aspell.net/">wordlist</A>: <p id="facts"></p><p>
+		</center>
+	</body>
+	<footer>
+		<a href="showDisclaimer()">Disclaimer</a>
+		<center>
+			<img src="files/logo.png"></img>
+		<center>
+	</footer>
 </html>
