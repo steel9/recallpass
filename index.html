@@ -29,28 +29,7 @@
         request.onreadystatechange = function(){
 			if (request.readyState === XMLHttpRequest.DONE)
 			{
-				var allwords = "";
-				var wordFiles = request.responseText.split('\n');
-				int i = 0;
-				function index() {
-					var request2 = new XMLHttpRequest();
-					request2.onreadystatechange = function(){
-						if (request.readyState === XMLHttpRequest.DONE)
-						{
-							allwords += request2.responseText;
-						}
-					};
-					request2.open("GET","files/" + wordFiles[i], false);
-					request2.send();
-					i++;
-					if (i < wordFiles.length)
-					{
-						setTimeout(index, 5);
-					}
-				}
-				index();
-				
-				words = allwords.split('\n');
+				words = request.responseText.split('\n');
 				
 				for (i = 0; i < 3; i++)
 				{
@@ -62,7 +41,7 @@
 				document.getElementById('passwordtitle').innerHTML = 'Password:';
 			}
 		};
-		request.open("GET","files/A_fileslist.txt", false);
+		request.open("GET","files/A_fileslist.txt", true);
 		request.send();
     }
 </script>
