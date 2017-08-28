@@ -63,7 +63,7 @@
 							
 							for (i = 0; i < 3; i++)
 							{
-								pass += words[Math.floor(Math.random() * words.length)];
+								pass += words[Math.floor(Math.random() * (words.length - 35)) + 35];
 								pass += sep + symbols[Math.floor(Math.random() * symbols.length)];
 							}
 							
