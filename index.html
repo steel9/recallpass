@@ -57,6 +57,9 @@
 						if (request.readyState === XMLHttpRequest.DONE)
 						{
 							words = request.responseText.split('\n');
+							var myList = words.ToList();
+							myList.RemoveRange(0, 35);
+							words = myList.ToArray();
 							
 							for (i = 0; i < 3; i++)
 							{
