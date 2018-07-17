@@ -57,6 +57,12 @@
 				};
 
 				function generatePassword() {
+					document.getElementById('password').innerHTML = "The password generator is currently disabled due to issues";
+					document.getElementById('passwordtitle').innerHTML = "";
+					document.getElementById('facts').innerHTML = 0;
+					return;
+					
+					//
 					document.getElementById('passwordtitle').innerHTML = 'Please wait...';
 					var pass = "";
 					var sep = separators[generateCryptoIntegerBetween(0, separators.length)];
